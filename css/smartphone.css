@@ -1,0 +1,492 @@
+@charset "UTF-8";
+/* 
+  css設定 @charsetが消されるsass仕様へのハック用コメントです。削除しないでください。新規作成時も必須！
+ */
+/*================================================================
+ site_default 
+================================================================*/
+/*================================================================
+ common_style 
+================================================================*/
+.wrap {
+  width: auto;
+  padding: 0;
+  margin: 0 10px;
+}
+
+.sp{
+  display: block !important;
+}
+.pc{
+  display: none !important;
+}
+
+.all-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+.globalnavi {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #fff;
+  background: rgba(255,255,255,0.9);
+  opacity: 0;
+}
+.globalnavi:before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: url(../img/close.png) no-repeat;
+  background-size: 100%;
+}
+.globalnavi.open {
+  display: block;
+  opacity: 1;
+  animation-duration: 0.5s;
+  animation-name: fade-in;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: fade-in;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: fade-in;
+}
+@keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+.navi-button.open {
+  display: none;
+}
+
+@-moz-keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.navi-button.open {
+  display: none;
+}
+
+.globalnavi ul {
+  margin: 30px 10px;
+}
+
+.globalnavi li {
+  float: none;
+  width: auto;
+  background: none;
+  text-align: left;
+}
+
+.globalnavi li a {
+  box-sizing: border-box;
+  display: block;
+  background: none;
+  color: #000;
+  font-size: 18px;
+  line-height: 50px;
+  height: 50px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.globalnavi li a span {
+  line-height: 50px;
+}
+
+.globalnavi li.current a {
+  border-bottom: none;
+  border-bottom: 1px solid #ccc;
+  cursor: default;
+}
+
+.site-header .logo {
+  padding-top: 10px;
+  width: auto;
+  text-align: center;
+}
+
+.site-header .logo img {
+  width: auto;
+  height: 28px;
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  z-index: 900;
+}
+
+.site-header .navi-button {
+  position: absolute;
+  top: 10px;
+  right: 2%;
+  width: 40px;
+  height: 38px;
+  text-align: left;
+}
+.site-header .navi-button span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  margin-bottom: 8px;
+}
+.contents {
+  margin-top: 50px;
+}
+.top .mark {
+  left: -5px;
+  width: 13.5833%;
+}
+.top .wrap {
+  padding-top: 15px;
+}
+.top h1 img {
+  margin: 0 auto;
+  width: 93%;
+}
+.top h1 {
+  padding-bottom: 15px;
+}
+.top .bonus h3 {
+  margin-bottom: 10px;
+}
+.top .bonus h3 img {
+  width: 90%;
+}
+.top .bonus .text img {
+  margin: 0 auto;
+  width: 90%;
+}
+.top .bonus {
+  padding-bottom: 10px;
+}
+.top .more h3 img {
+  width: 100%;
+}
+.top .more h3 {
+  padding-bottom: 9px;
+}
+.common-button .cap {
+  padding-top: 2px;
+}
+.common-button .cap img {
+  width: 30%;
+}
+.top {
+  padding-bottom: 23px;
+}
+.presents {
+  padding: 28px 0 28px;
+}
+.presents h2 img {
+  width: 36.5%;
+}
+.presents h2 {
+  padding-bottom: 12px;
+}
+.presents .text-box {
+  margin-bottom: 20px;
+  padding-left: 0px;
+  padding-bottom: 14px;
+  text-align: center;
+}
+.presents .text-box .text {
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 88%;
+}
+.presents .text-box .float {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 70%;
+}
+.presents .more h3 {
+  margin: 0 auto;
+  padding-bottom: 4px;
+  width: 100%;
+  border-bottom: 1px solid #00829e;
+}
+
+.presents .more h3 img {
+  margin: 0 auto;
+}
+
+.presents .more {
+  margin: 0;
+}
+.presents .more li {
+  float: none;
+  margin: 0 auto;
+  padding-bottom: 25px !important;
+}
+
+.presents .more .cond1 {
+  width: 69.375%;
+}
+
+.presents .more .cond1_2 {
+  width: 68.906%;
+}
+
+.presents .more .cond2 {
+  width: 47.8125%;
+}
+
+.presents .more .cond2_2 {
+  width: 50.46875%;
+}
+
+.presents .more .cond3 {
+  width: 49.6875%;
+}
+
+.presents .more .cond3_2 {
+  width: 42.96875%;
+}
+
+.presents .more .cond4 {
+  width: 64.84375%;
+}
+
+.presents .more .cond4_2 {
+  padding-bottom: 0;
+  width: 47.8125%;
+}
+
+.quiz .wrap {
+  padding: 12px 0 20px;
+}
+.quiz h2 {
+  padding: 0 0 15px;
+}
+.quiz h2 img {
+  width: 20.3333%;
+}
+.quiz .lead img {
+  margin: 0 auto;
+  width: 65%;
+}
+.quiz li {
+  float: none;
+  clear: both;
+  margin: 0 auto !important;
+  padding-bottom: 20px;
+  width: 80% !important;
+}
+.quiz li.last {
+  padding-bottom: 0;
+}
+.quiz .lead {
+  padding-bottom: 2px;
+}
+.quiz li.cond2 {
+  margin-right: 0%;
+}
+.quiz ol {
+  box-sizing: border-box;
+  padding: 0 2% 17px 3%;
+}
+.quiz .pass-key-flaves img {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.quiz .common-button {
+  margin: 0 auto;
+  width: 90%;
+}
+.clioclub h2 img {
+  margin: 0 auto;
+  width: 75.6%;
+}
+
+.clioclub h2 {
+  padding-bottom: 9px;
+}
+.clioclub .text {
+  padding-bottom: 12px;
+}
+.clioclub .text img {
+  width: 99.25%;
+}
+.clioclub li {
+  float: none !important;
+  clear: both !important;
+  margin: 0 auto !important;
+  padding-bottom: 20px;
+  width: 90% !important;
+}
+
+.clioclub li.last {
+  padding-bottom: 0;
+}
+
+.clioclub {
+  padding: 28px 0 28px;
+}
+.information {
+  padding: 28px 0 40px;
+}
+.information h2 img {
+  width: 24%;
+}
+.information h2 {
+  padding: 0 0 8px;
+}
+.information .anotations li {
+  padding-left: 1em;
+  padding-bottom: 5px;
+  font-size: 9px;
+  line-height: 14px;
+  text-indent: -1em;
+}
+.information .anotations {
+  padding-bottom: 16px;
+}
+.information .contacts {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 10px;
+  color: #000;
+}
+.information .contacts ul {
+  display: block;
+}
+.information .contacts h3 {
+  display: block;
+  padding-bottom: 9px;
+  vertical-align: middle;
+  width: auto;
+  text-align: center;
+}
+.information .contacts h3 img {
+  width: 27%;
+}
+.information .contacts li {
+  font-size: 10px;
+  line-height: 16px;
+}
+
+.site-footer .state {
+  margin: 0 auto;
+  padding-bottom: 15px;
+  width: 80%;
+}
+
+.site-footer .logo-copyrights {
+  display: block;
+  text-align: center;
+}
+
+.site-footer .logo-copyrights .fotter-logo {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  width: 50%;
+  padding-right: 0;
+}
+
+.site-footer .footer-links {
+  margin: 0 -10px;
+  padding-bottom: 15px;
+}
+
+.site-footer .footer-links li {
+  display: block;
+  margin-bottom: 1px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.site-footer .footer-links li:after {
+  display: none;
+}
+
+.site-footer .footer-links li a {
+  display: block;
+  padding: 12px 0;
+  background: #e7e7e7;
+}
+
+.site-footer {
+  padding: 25px 0 30px;
+}
+.site-footer .logo-copyrights small {
+  display: inline-block;
+  font-size: 10px;
+}
+
+.quiz li.cond2{
+  width: 49%;
+}
+.quiz li.cond1 {
+  width: 42%;
+}
+
+.banner-area {
+  padding: 20px 0 25px;
+  text-align: center;
+}
+
+.banner-area img {
+  width: 99%;
+}
+
