@@ -1,9 +1,9 @@
 @charset "UTF-8";
-/* 
+/*
 css設定 @charsetが消されるsass仕様へのハック用コメントです。削除しないでください。新規作成時も必須！
 */
 /*================================================================
-site_default 
+site_default
 ================================================================*/
 /* -------------------------------------------
 * initialize
@@ -57,10 +57,30 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-.clearfix:before, .clearfix:after {
+/* for modern brouser */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+/* IE7,MacIE5 */
+.clearfix {
+  display: inline-block;
+}
+/* WinIE6 below, Exclude MacIE5 \*/
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+
+/*.clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
@@ -71,7 +91,7 @@ a:hover {
 
 .clearfix {
   zoom: 1;
-}
+}*/
 
 iframe {
   position: relative;
@@ -107,22 +127,27 @@ img.pc {
   .sp {
     display: block;
   }
-  span.sp {
-    display: inline;
+  span.sp { display: inline;
   }
   img.sp {
     display: inline-block;
   }
 }
+
+.scroll {
+  display: block;
+  z-index: 100;
+}
+
 /*================================================================
-common_style 
+common_style
 ================================================================*/
 .wrap {
   box-sizing: border-box;
   position: relative;
   margin: 0 auto;
   padding: 0 20px;
-  max-width: 1200px;
+  /*max-width: 1200px;*/
 }
 
 a:hover {
@@ -131,8 +156,8 @@ a:hover {
 
 .page-top {
   position: fixed;
-  right: 0;
-  bottom: 0;
+  right: 15px;
+  bottom: 8%;
   line-height: 0;
 }
 
@@ -143,13 +168,17 @@ a:hover {
   box-sizing: border-box;
 }
 
+section > h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
 /*================================================================
-top_style 
+top_style
 ================================================================*/
 
 .site-header {
   position: relative;
-  height: 137px;
+  height: 87px;
 }
 
 .site-header .logo {
@@ -164,7 +193,8 @@ top_style
 
 .globalnavi {
   position: absolute;
-  top: 87px;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
@@ -177,20 +207,31 @@ top_style
   width: 100%;
 }
 
+.globalnavi ul {
+  padding: 20px 0;
+}
+
 .globalnavi li {
   box-sizing: border-box;
-  float: left;
-  width: 20%;
-  background: #fff;
+  width: 13%;
+  display: inline-block;
+  border-left: solid 2px #fff;
+}
+
+.globalnavi li:last-child {
+  border-right: solid 2px #fff;
 }
 
 .globalnavi li a {
+  color: #fff;
   box-sizing: border-box;
   display: block;
-  background: #f3f49b;
-  line-height: 50px;
-  height: 50px;
+  line-height: 20px;
+  height: 20px;
   text-align: center;
+  font-size: 18px;
+  letter-spacing: 10px;
+  text-decoration: none;
 }
 
 .globalnavi li.current a {
@@ -207,324 +248,252 @@ top_style
   vertical-align: middle;
 }
 
-.contents {
-  background: url(../img/bg0.png);
+.top {
+    position: relative;
+    width: 100%;
+}
+
+.top:before {
+    content:"";
+    display: block;
+    padding-top: 45%; /* 高さを幅の75%に固定 */
+    background:url(../img/top_bg.png) no-repeat center top;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+.top .wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.top .wrap > img {
+  position: absolute;
+}
+
+.top img#ttl1 {
+  top: 0;
+  left: 12.5%;
+  width: 10%;
+}
+
+.top img#ttl2 {
+  top: 25%;
+  left: 0;
+  width: 100%;
+}
+
+.top img#ttl3 {
+  bottom: 12%;
+  right: 3%;
+  width: 25%;
 }
 
 .top .wrap {
   padding-top: 106px;
   text-align: center;
+  margin: 0;
 }
 
-.top h1 {
-  padding-bottom: 87px;
-}
+/*================================================================
+property_style
+================================================================*/
 
-.top h1 img {
-  width: 90%;
-}
-
-
-.top .bonus {
-  padding-bottom: 48px;
-}
-
-.top .bonus h3 {
-  margin-bottom: -15px;
-}
-
-.top .bonus h3 img {
-  width: 46.3%;
-}
-.top .bonus .text img {
-  width: 83.5833%;
-}
-
-.top {
-  padding-bottom: 95px;
-}
-
-.top .more h3 {
-  padding-bottom: 32px;
-}
-
-.top .more h3 img {
-  width: 74.73%;
-}
-
-.common-button {
+.property {
+  background: url(../img/property_pattern.png) repeat;
+  padding: 30px 0 0;
   text-align: center;
 }
 
-.common-button img {
-  width: 65%;
+/* 切り替えタブ */
+div.tabbox { margin: 0px; padding: 0px; width: 100%; }
+ul.tabs { margin: 0px; padding: 0px; }
+ul.tabs:after { content: ""; clear: both; display: block; }
+ul.tabs ul { padding: 0;}
+ul.tabs ul:after { content: ""; clear: both; display: block; }
+ul.tabs > li { width: 20%; height: 43px; }
+ul.tabs li { display: inline-block; border: solid 1px #362b1a; border-radius: 4px; background-color: #fff; margin: 0 7px; }
+ul.tabs li.selected { background-color: #362b1a;}
+ul.tabs a { display: block; margin: 0px 1px 0px 0px; padding: 3px; text-align: center; font-size: 24px; color: #362b1a; line-height: 40px; }
+ul.tabs li.selected a { color: #fff; }
+ul.tabs a span { font-size: 18px; }
+
+ul.tabs ul.tabs-sheat { height: 42px; }
+ul.tabs ul.tabs-sheat li { margin: 0 1%; width: 21%; display: inline-block; float: none;}
+ul.tabs ul.tabs-sheat li.selected { width: 25%; }
+ul.tabs ul.tabs-sheat li a { background-color: #ada6a2; width: 100%; height: 30px; line-height: 2.9; }
+ul.tabs ul.tabs-sheat li.selected a { background-image: -webkit-linear-gradient( 90deg, rgb(117,108,103) 0%, rgb(175,168,164) 100%); height: 36px; }
+/* ▼(B-3)各タブの配色 */
+/*ul.tabs a:hover { color: yellow; }*/
+
+.property div.tab { clear: left; padding: 20px 0; }
+.property div.tab .wrapper { height: auto; width: 95%; margin: auto; }
+.property div.tab .wrapper:after {   display: block;
+  clear: both;
+  content: ""; }
+.property div.tab .wrapper .g-map { width: 97%; height: 580px; margin: auto; margin-bottom: 25px; }
+.property div.tab p { margin: 0.5em; }
+
+.property-items {
+margin-bottom: 15px;
 }
 
-.common-button .cap {
-  padding-top: 8px;
+.property-items:after {
+  display: block;
+  clear: both;
+  content: "";
 }
 
-.common-button .cap img {
-  width: auto;
-}
-
-.top .mark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8.5833%;
-}
-
-.presents {
-  background: url(../img/bg1.png);
-  padding: 67px 0 95px;
-  text-align: center;
-}
-
-.presents h2 {
-  padding-bottom: 56px;
-}
-
-.presents h2 img {
-  width: 18.25%;
-}
-
-.presents .text-box {
-  box-sizing: border-box;
+.property-items .upper-item {
+  color: #fff;
   position: relative;
-  background: #fff;
-  margin-bottom: 74px;
-  padding-left: 30px;
-  border-radius: 15px;
+}
+
+.property-items .upper-item > img {
+  width: 100%;
+}
+
+.property-items .upper-item #area {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 116px;
+  height: 28px;  line-height: 28px;
+  background-color: #3b2c13;
+  opacity: .8;
+}
+
+.property-items .upper-item #num {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: rgb(39, 84, 52);
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+}
+
+.property-items .upper-item #access {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: 5px 5px 2px 5px;
+  text-align: left;
+  font-size: 8.5px ;
+  line-height: 12px;
+}
+
+.property-items .lower-item {
+  background-color: #fff;
+  padding: 5px;
+  text-align: left;
+  font-size: 8.5px ;
+  line-height: 12px;
+}
+
+.property-items .lower-item img.point {
+  padding: 10px 0 5px;
+}
+
+#infoWindow {
+  padding: 10% 0 3%;
+}
+
+#infoWindow h3 {
+  font-size: 1.45rem;
   text-align: left;
 }
 
-.presents .text-box .text {
-  padding-top: 35px;
-  padding-bottom: 70px;
-  width: 55.75%;
+#infoWindow a {
+  display: block;
+  background-color: #f3b952;
+  text-decoration: none;
+  color: #fff;
+  height: 2rem;
+  line-height: 2rem;
 }
 
-.presents .text-box .float {
-  position: absolute;
-  margin-top: -20px;
-  margin-left: -8px;
-  top: 0;
-  right: 10px;
-  width: 42.5%;
+#infoWindow .grp_r {
+  text-align: left;
+  margin: 5% 0;
 }
 
-.presents .more {
-  margin: 0 12px;
-  max-width: 1176px;
+#infoWindow .grp_r img, #infoWindow .grp_r p {
+  display: inline-block;
 }
 
-.presents .more h3 {
-  margin: 0 auto;
-  padding-bottom: 9px;
-  width: 85.55%;
-  border-bottom: 1px solid #00829e;
+#infoWindow .grp_r img {
+  width: 40%;
 }
 
-.presents .more h3 img {
-  width: 90.3508%;
+#infoWindow .grp_r p {
+  vertical-align: top;
+  margin-left: 20px;
 }
 
-.presents .more li {
-  float: left;
-}
+/*================================================================
+campagne_style
+================================================================*/
 
-.presents .more ul {
-  padding: 45px 0;
-}
-
-.presents .more li img {
-  width: 100%;
-}
-.presents .more .cond3 {
-  clear: both;
-}
-
-.presents .more .cond1 {
-  width: 53.061%;
-}
-
-.presents .more .cond2 {
-  width: 46.939%;
-}
-
-.presents .more .cond3 {
-  width: 47.619%;
-}
-
-.presents .more .cond4 {
-  width: 52.381%;
-}
-
-.quiz {
-  padding: 54px 0 81px;
+.campagne {
+  padding: 30px 0 20px;
+  background: url(../img/campaign_pattern.jpg) repeat;
   text-align: center;
-}
-
-.quiz .wrap {
-  padding: 54px 0 87px;
-  background: #fff;
-  border-radius: 15px;
-}
-
-.quiz h2 {
-  padding: 0 0 43px;
-}
-
-.quiz h2 img {
-  width: 10.3333%;
-}
-
-.quiz .lead {
-  padding-bottom: 16px;
-}
-
-.quiz .lead img {
-  width: 47.183%;
-}
-
-.quiz ol {
-  box-sizing: border-box;
-  padding: 0 4.41666% 29px 6.41666%;
-}
-
-.quiz li {
-  float: left;
-  margin-right: 5.41666%;
-}
-
-.quiz li.cond1 {
-  width: 25.3%;
-}
-.quiz li.cond2 {
-  width: 29.4%;
-}
-.quiz li img {
-  width: 100%;
-}
-
-.quiz li.last {
-  margin-right: 0;
-  width: 26.4%%;
-}
-
-.quiz .pass-key-flaves {
-  padding-bottom: 35px;
-}
-
-.quiz .pass-key-flaves img {
-  width: 52.9166%;
-}
-
-.clioclub {
-  background: url(../img/bg1.png);
-  padding: 50px 0 72px;
-  text-align: center;
-}
-
-.clioclub h2 {
-  padding-bottom: 19px;
-}
-
-.clioclub h2 img {
-  width: 37.8%;
-}
-
-.clioclub .text {
-  padding-bottom: 38px;
-}
-
-.clioclub .text img {
-  width: 66.25%;
-}
-
-.clioclub ol {
-  margin: 0 auto;
-  max-width: 1140px;
-}
-
-.clioclub li {
-  float: left;
-  width: 29.824%;
-  margin-right: 4.8245%;
-}
-
-.clioclub li.last {
-  float: left;
-  width: 29.824%;
-  margin-right: 0;
-}
-
-.information {
-  padding: 52px 0 95px;
   color: #fff;
 }
 
-.information h2 {
-  padding: 0 0 27px;
+.campagne .anotations {
+  text-align: left;
+  line-height: 30px;
+  width: 65%;
+  margin: auto;
+}
+
+/*================================================================
+contacts_style
+================================================================*/
+
+.contacts {
+  background: url(../img/property_pattern.png) repeat;
+  padding: 35px 0 65px;
   text-align: center;
 }
 
-.information .anotations {
-  padding-bottom: 35px;
+.contacts > p {
+  width: 80%;
+  margin: auto;
+  padding: 25px;
+  background-color: white;
+  border: double;
 }
 
-.information .anotations li {
-  padding-bottom: 8px;
-  padding-left: 1em;
-  font-size: 14px;
-  line-height: 22px;
-  text-indent: -1em;
+.contacts .bnr {
+  margin-top: 25px;
 }
 
-.information .contacts {
-  box-sizing: border-box;
-  display: table;
-  background: #fff;
-  padding: 27px 63px;
-  width: 100%;
-  color: #000;
+.contacts > p > span {
+  font-size: 22px;
 }
 
-.information .contacts h3 {
-  display: table-cell;
-  vertical-align: middle;
-  width: 13.6871%;
-}
-
-.information .contacts img {
-  max-width: 100%;
-}
-
-.information .contacts ul {
-  display: table-cell;
-  padding-left: 3%;
-  vertical-align: middle;
-}
-
-
-.information .contacts li {
-  font-size: 14px;
-  line-height: 22px;
-}
-
-.information .contacts a {
-  color: #2abd5a;
-  font-weight: bold;
-}
+/*================================================================
+footer_style
+================================================================*/
 
 .site-footer {
-  padding: 17px 0 47px;
-  border-top: 1px solid #cccccc;
+  padding-top: 17px;
+}
+
+.site-footer .wrap {
+  padding-bottom: 20px;
 }
 
 .site-footer .footer-links {
-  float: right;
+  float: right !important;
   text-align: right;
 }
 
@@ -546,7 +515,7 @@ top_style
 }
 .site-footer .float-left-box {
   float: left;
-  width: 50%;
+  width: 20%;
 }
 .site-footer .logo-copyrights {
   width: 100%;
@@ -560,37 +529,16 @@ top_style
   vertical-align: middle;
 }
 
-.site-footer .logo-copyrights p {
-  display:table-row;
-  width: 327px;
-}
-.site-footer .logo-copyrights p img {
-  width: 327px;
-}
-
-.site-footer .logo-copyrights img {
-  width: 100%;
-  vertical-align: middle;
-}
-
-.site-footer .logo-copyrights small {
-  display: table-cell;
-  font-size: 10px;
-  vertical-align: middle;
-}
-
-.banner-area {
-  padding: 50px 0 60px;
+.site-footer .copyright {
   text-align: center;
+  background-color: #333333;
+  color: #fff;
+  font-size: 10.5px;
+  padding: 10px;
 }
-
-.banner-area img {
-  width: 65%;
-}
-
 
 /*================================================================
-tablet_style 
+tablet_style
 ================================================================*/
 @media (max-width: 1000px) {
   .wrap {
@@ -613,54 +561,10 @@ tablet_style
 .top .more h3 {
   padding-bottom: 18px;
 }
-.top {
+/*.top {
   padding-bottom: 45px;
-}
-.presents {
-  padding: 28px 0 45px;
-}
-.presents h2 {
-  padding-bottom: 22px;
-}
-.presents .text-box .text {
-  padding-top: 22px;
-  padding-bottom: 45px;
-}
-.presents .text-box {
-  margin-bottom: 30px;
-  padding-left: 20px;
-}
-.presents .more ul {
-  padding: 22px 0;
-}
-.quiz {
-  padding: 34px 0 41px;
-}
-.quiz .wrap {
-  padding: 25px 0 40px;
-}
-.quiz h2 {
-  padding: 0 0 22px;
-}
-.quiz .pass-key-flaves {
-  padding-bottom: 22px;
-}
-.clioclub {
-  padding: 28px 0 38px;
-}
-.clioclub .text {
-  padding-bottom: 22px;
-}
-.clioclub li img {
-  width: 100%;
-}
-.information {
-  padding: 32px 0 40px;
-  color: #fff;
-}
-.information h2 {
-  padding: 0 0 17px;
-}
+}*/
+
 .site-footer .footer-links {
   float: none;
   text-align: left;
@@ -683,5 +587,3 @@ tablet_style
   max-width: 327px;
 }
 }
-
-
