@@ -6,11 +6,14 @@
 
 function ChangeTab(tabname) {
    // 全部消す
+  //  $("div.tab").removeClass("visible");
    $("div#tokyo").css("display","none");
    $("div#kanagawa").css("display","none");
    $("div#hokkaido").css("display","none");
    $("div#fukuoka").css("display","none");
    // 指定箇所のみ表示
+  //  $("div#" + tabname).toggleClass('visible');
+  //  $("div#" + tabname).fadeIn(1000);
    $("div#" + tabname).css("display","block");
    // 全部消す
    $("li#tokyo").removeClass("selected");
@@ -19,6 +22,13 @@ function ChangeTab(tabname) {
    $("li#fukuoka").removeClass("selected");
    // 指定箇所のみ表示
    $("li#" + tabname).addClass("selected");
+   if (tabname == "kanagawa") {
+     initializeK('kanagawa-map');
+   } else if (tabname == "hokkaido") {
+     initializeH('hokkaido-map');
+   } else if (tabname == "fukuoka") {
+     initializeF('fukuoka-map');
+   }
 }
 
 /************************************************
