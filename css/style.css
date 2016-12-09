@@ -301,7 +301,7 @@ top_style
   line-height: 20px;
   height: 20px;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.7vw;
   letter-spacing: 7px;
   text-decoration: none;
 }
@@ -391,7 +391,7 @@ ul.tabs li { display: inline-block; border: solid 1px #362b1a; border-radius: 4p
 ul.tabs li.selected { background-color: #362b1a;}
 ul.tabs a { display: block; margin: 0px 1px 0px 0px; padding: 3px; text-align: center; font-size: 2.2vw; color: #362b1a; line-height: 40px; text-decoration: none; }
 ul.tabs li.selected a { color: #fff; }
-ul.tabs a span { font-size: 18px; }
+ul.tabs a span { font-size: 1.8vw; }
 
 ul.tabs ul.tabs-sheat { height: 42px; }
 ul.tabs ul.tabs-sheat li { margin: 0 1%; width: 21%; display: inline-block; float: none;}
