@@ -387,7 +387,7 @@ ul.tabs:after { content: ""; clear: both; display: block; }
 ul.tabs ul { padding: 0;}
 ul.tabs ul:after { content: ""; clear: both; display: block; }
 ul.tabs > li { width: 21.5%; height: 43px; }
-ul.tabs li { display: inline-block; border: solid 1px #362b1a; border-radius: 4px; background-color: #fff; margin: 0 7px; }
+ul.tabs li { display: inline-block; border: solid 1px #362b1a; border-radius: 4px; background-color: #fff; margin: 0 8px; }
 ul.tabs li.selected { background-color: #362b1a;}
 ul.tabs a { display: block; margin: 0px 1px 0px 0px; padding: 3px; text-align: center; font-size: 2.2vw; color: #362b1a; line-height: 40px; text-decoration: none; }
 ul.tabs li.selected a { color: #fff; }
@@ -406,7 +406,7 @@ ul.tabs ul.tabs-sheat li.selected a { background-image: -webkit-linear-gradient(
 .property div.tab .wrapper:after {   display: block;
   clear: both;
   content: ""; }
-.property div.tab .wrapper .g-map { width: 85%; height: 380px; margin: auto; margin-bottom: 25px; }
+.property div.tab .wrapper .g-map { width: 97%; height: 380px; margin: auto; margin-bottom: 25px; }
 .property div.tab p { margin: 0.5em; }
 .g-map .row {
   overflow: hidden;
@@ -475,7 +475,7 @@ ul.tabs ul.tabs-sheat li.selected a { background-image: -webkit-linear-gradient(
   padding: 5px 5px 2px 5px;
   text-align: left;
   font-size: 8.5px ;
-  line-height: 12px;
+  line-height: 1.8vh;
 }
 
 .property-items .lower-item {
@@ -483,7 +483,7 @@ ul.tabs ul.tabs-sheat li.selected a { background-image: -webkit-linear-gradient(
   padding: 5px;
   text-align: left;
   font-size: 0.9vw;
-  line-height: 12px;
+  line-height: 1.8vh;
 }
 
 .property-items .lower-item img.point {
@@ -493,6 +493,7 @@ ul.tabs ul.tabs-sheat li.selected a { background-image: -webkit-linear-gradient(
 #infoWindow {
   padding: 5% 0 3%;
   font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+  width: 350px;
 }
 
 #infoWindow h3 {

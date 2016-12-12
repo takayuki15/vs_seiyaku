@@ -83,6 +83,7 @@ var viewGoogleMap = function(id, option, markerArray, isNumberPin, location){
       zoom: option.zoom || 11,
       center:option.center || new google.maps.LatLng(35.704498,139.619058),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false,
       navigationControlOptions: {
         style: google.maps.NavigationControlStyle.DEFAULT
       }
@@ -92,6 +93,7 @@ var viewGoogleMap = function(id, option, markerArray, isNumberPin, location){
       zoom: option.zoom || 10,
       center:option.center || new google.maps.LatLng(35.512396,139.538006),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false,
       navigationControlOptions: {
         style: google.maps.NavigationControlStyle.DEFAULT
       }
@@ -102,6 +104,7 @@ var viewGoogleMap = function(id, option, markerArray, isNumberPin, location){
       center:option.center || new google.maps.LatLng(43.046343,141.395505
 ),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false,
       navigationControlOptions: {
         style: google.maps.NavigationControlStyle.DEFAULT
       }
@@ -111,6 +114,7 @@ var viewGoogleMap = function(id, option, markerArray, isNumberPin, location){
       zoom: option.zoom || 13,
       center:option.center || new google.maps.LatLng(33.591088,130.371312),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false,
       navigationControlOptions: {
         style: google.maps.NavigationControlStyle.DEFAULT
       }
