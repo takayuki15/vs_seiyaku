@@ -33,51 +33,65 @@ var viewGoogleMap = function(id, option, markerArray, isNumberPin, location){
    */
   var setMarkerData = function(makerArray) {
 
-    // 登録データ分のマーカーを作成
-    for (var i = 0; i < makerArray.length; i++) {
-      if (location == "Tokyo") {
+    if (location == "Tokyo") {
+      // 登録データ分のマーカーを作成
+      for (var i = 0; i < makerArray.length; i++) {
         var marker = new google.maps.Marker({
           position: makerArray[i].position,
           title: makerArray[i].title,
           map: gmap,
-          icon: isNumberPin ? new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld="+ (i + 1) + "|275333|ffffff") : null
+          icon: isNumberPin ? "./img/pin/pin" + (i+1) + ".png" : null
         });
-      } else if (location == "Kanagawa") {
-        if ( i == 2 ) {
-          continue;
-        }
-        var marker = new google.maps.Marker({
-          position: makerArray[i].position,
-          title: makerArray[i].title,
-          map: gmap,
-          icon: isNumberPin ? new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld="+ (i + 8) + "|275333|ffffff") : null
-        });
-      } else if (location == "Hokkaido") {
-        var marker = new google.maps.Marker({
-          position: makerArray[i].position,
-          title: makerArray[i].title,
-          map: gmap,
-          icon: isNumberPin ? new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld="+ (i + 20) + "|275333|ffffff") : null
-        });
-      } else {
-        var marker = new google.maps.Marker({
-          position: makerArray[i].position,
-          title: makerArray[i].title,
-          map: gmap,
-          icon: isNumberPin ? new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld="+ (i + 25) + "|275333|ffffff") : null
-        });
+
+        // マーカーのclickリスナー登録
+        setMarkerClickListener(marker, makerArray[i], true);
       }
+    } else if (location == "Kanagawa") {
+      // 登録データ分のマーカーを作成
+      for (var i = 0; i < makerArray.length; i++) {
+        var marker = new google.maps.Marker({
+          position: makerArray[i].position,
+          title: makerArray[i].title,
+          map: gmap,
+          icon: isNumberPin ? "./img/pin/pin" + (i+8) + ".png" : null
+        });
 
+        // マーカーのclickリスナー登録
+        setMarkerClickListener(marker, makerArray[i], true);
+      }
+    } else if (location == "Hokkaido") {
+      // 登録データ分のマーカーを作成
+      for (var i = 0; i < makerArray.length; i++) {
+        var marker = new google.maps.Marker({
+          position: makerArray[i].position,
+          title: makerArray[i].title,
+          map: gmap,
+          icon: isNumberPin ? "./img/pin/pin" + (i+18) + ".png" : null
+        });
 
-      // マーカーのclickリスナー登録
-      setMarkerClickListener(marker, makerArray[i], true);
+        // マーカーのclickリスナー登録
+        setMarkerClickListener(marker, makerArray[i], true);
+      }
+    } else {
+      // 登録データ分のマーカーを作成
+      for (var i = 0; i < makerArray.length; i++) {
+        var marker = new google.maps.Marker({
+          position: makerArray[i].position,
+          title: makerArray[i].title,
+          map: gmap,
+          icon: isNumberPin ? "./img/pin/pin" + (i+23) + ".png" : null
+        });
+
+        // マーカーのclickリスナー登録
+        setMarkerClickListener(marker, makerArray[i], true);
+      }
     }
   };
 
   option = option ? option : {};
-  if(id == null){
-    return;
-  }
+  // if(id == null){
+  //   return;
+  // }
   if (location == "Tokyo") {
     var mapOption = {
       zoom: option.zoom || 11,

@@ -287,6 +287,7 @@ top_style
   width: 13%;
   display: inline-block;
   border-left: solid 2px #fff;
+  padding-left: 1%;
 }
 
 .globalnavi li:last-child {
@@ -456,15 +457,34 @@ ul.tabs ul.tabs-sheat li.selected a { background-image: -webkit-linear-gradient(
   opacity: .8;
 }
 
-.property-items .upper-item #num {
+.property-items .upper-item .num {
   position: absolute;
   top: 5px;
   right: 10px;
   border-radius: 50%;
-  background-color: rgb(39, 84, 52);
   width: 45px;
   height: 45px;
   line-height: 45px;
+}
+
+.property-items .upper-item #num-t {
+  background-color: #005331;
+  /*background-color: rgb(39, 84, 52);*/
+}
+
+.property-items .upper-item #num-k {
+  background-color: #284a6e;
+  /*background-color: rgb(0, 31, 64);*/
+}
+
+.property-items .upper-item #num-h {
+  background-color: #555555;
+  /*background-color: rgb(33, 33, 33);*/
+}
+
+.property-items .upper-item #num-f {
+  background-color: #610000;
+  /*background-color: rgb(38, 0, 0);*/
 }
 
 .property-items .upper-item #access {
@@ -497,7 +517,7 @@ ul.tabs ul.tabs-sheat li.selected a { background-image: -webkit-linear-gradient(
 }
 
 #infoWindow h3 {
-  font-size: 1.45rem;
+  font-size: 1.15rem;
   text-align: left;
 }
 
@@ -526,6 +546,7 @@ ul.tabs ul.tabs-sheat li.selected a { background-image: -webkit-linear-gradient(
 #infoWindow .grp_r p {
   vertical-align: top;
   margin-left: 20px;
+  width: 50%;
 }
 
 /*================================================================

@@ -38,6 +38,11 @@ section > h2 {
   height: 11%;
   z-index: 9999;
 }
+
+.globalnavi li {
+  padding-left: 3%;
+}
+
 .globalnavi:before{
   content: "";
   display: block;
@@ -276,12 +281,13 @@ ul.tabs a span { font-size: 10px; }
   font-size: 10px;
 }
 
-.property-items .upper-item #num {
+.property-items .upper-item .num {
   width: 30px;
   height: 30px;
   line-height: 30px;
   font-size: 17px;
   font-style: oblique;
+  padding-right: 4px;
 }
 
 .property-items .upper-item #access {
