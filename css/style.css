@@ -443,7 +443,7 @@ ul.tabs ul.tabs-sheat li.selected a { background-image: -webkit-linear-gradient(
   position: relative;
 }
 
-.property-items .upper-item > img {
+.property-items .upper-item > a > img {
   width: 100%;
 }
 

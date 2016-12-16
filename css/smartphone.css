@@ -165,7 +165,7 @@ section > h2 {
   height: 18px;
 }
 .site-header {
-  position: fixed;
+  //position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -189,10 +189,6 @@ section > h2 {
   background: #000;
   margin-bottom: 8px;
 }
-.contents {
-  margin-top: 40px;
-}
-
 .top {
   height: 322px;
 }
