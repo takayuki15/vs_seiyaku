@@ -50,3 +50,27 @@ $(function() {
         }
     });
 });
+
+/************************************************
+
+	Tab Recognisation
+
+************************************************/
+
+// $(window).bind("load", function(){
+//   alert("test");
+//
+// 	if(document.URL.match("#fukuoka")) {
+// 		initializeF('fukuoka-map');
+//       alert("testF");
+// 	} else if (document.URL.match("#kanagawa")) {
+//     initializeK('kanagawa-map');
+//       alert("testK");
+// 	} else if (document.URL.match("#hokkaido")) {
+//     initializeH('hokkaido-map');
+//       alert("testH");
+// 	} else {
+//     initializeT('tokyo-map');
+//       alert("testT");
+// 	}
+// });
