@@ -604,12 +604,13 @@ footer_style
 
 .site-footer .wrap {
   padding-bottom: 20px;
+  text-align: center;
 }
 
-.site-footer .footer-links {
+/*.site-footer .footer-links {
   float: right !important;
   text-align: right;
-}
+}*/
 
 .site-footer .footer-links li {
   display: inline;
@@ -681,12 +682,12 @@ tablet_style
 
 .site-footer .footer-links {
   float: none;
-  text-align: left;
+  //text-align: left;
   padding-bottom: 12px;
 }
 .site-footer .logo-copyrights {
   float: none;
-  width: auto;
+  width: 100%;
 }
 .site-footer {
   padding: 17px 0 22px;
