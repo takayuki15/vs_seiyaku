@@ -328,7 +328,7 @@ ul.tabs a span { font-size: 10px; }
 }
 
 .contacts .bnr {
-  width: 70%;
+  width: 90%;
 }
 
 .site-footer .logo-copyrights {
@@ -397,4 +397,7 @@ ul.tabs a span { font-size: 10px; }
 .page-top {
   right: 5px;
   bottom: 1%;
+}
+#bnr_area {
+  width: 100%;
 }

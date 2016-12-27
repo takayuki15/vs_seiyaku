@@ -28,6 +28,8 @@ function ChangeTab(tabname) {
      initializeH('hokkaido-map');
    } else if (tabname == "fukuoka") {
      initializeF('fukuoka-map');
+   } else {
+     initializeT('tokyo-map');
    }
 }
 
