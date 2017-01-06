@@ -104,8 +104,8 @@ var viewGoogleMap = function(id, option, markerArray, isNumberPin, location){
     };
   } else if (location == "Kanagawa") {
     var mapOption = {
-      zoom: option.zoom || 10,
-      center:option.center || new google.maps.LatLng(35.512396,139.538006),
+      zoom: option.zoom || 11,
+      center:option.center || new google.maps.LatLng(35.551455,139.612675),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       scrollwheel: false,
       navigationControlOptions: {
