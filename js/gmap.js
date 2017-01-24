@@ -66,7 +66,7 @@ var viewGoogleMap = function(id, option, markerArray, isNumberPin, location){
           position: makerArray[i].position,
           title: makerArray[i].title,
           map: gmap,
-          icon: isNumberPin ? "./img/pin/pin" + (i+18) + ".png" : null
+          icon: isNumberPin ? "./img/pin/pin" + (i+19) + ".png" : null
         });
 
         // マーカーのclickリスナー登録
@@ -79,7 +79,7 @@ var viewGoogleMap = function(id, option, markerArray, isNumberPin, location){
           position: makerArray[i].position,
           title: makerArray[i].title,
           map: gmap,
-          icon: isNumberPin ? "./img/pin/pin" + (i+23) + ".png" : null
+          icon: isNumberPin ? "./img/pin/pin" + (i+24) + ".png" : null
         });
 
         // マーカーのclickリスナー登録
