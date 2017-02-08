@@ -55,7 +55,7 @@
         </div>
       </section>
       <section id="property" class="property">
-        <h2 style="font-family: 'Cardo', serif;">RESIDENCE</h2>
+        <h2 id="lettering" style="font-family: 'Cardo', serif;">RESIDENCE</h2>
         <div class="tabbox">
           <ul class="tabs">
             <li id="tokyo" class="selected"><a class="tokyo" onclick="ChangeTab('tokyo'); return false;">東京<span>の物件を見る</span></a></li>
@@ -406,6 +406,21 @@
   <script src="./js/property.js" type="text/javascript"></script>
   <script src="./js/jquery.easing.1.3.js" type="text/javascript"></script>
   <script src="./js/util.js" type="text/javascript"></script>
+  <script src="./js/jquery.lettering.js" type="text/javascript"></script>
+  <script src="./js/jquery.lettering.animate.js" type="text/javascript"></script>
+  <script src="./js/pace.min.js" type="text/javascript"></script>
+  <script>
+
+  $(document).ready(function()
+  {
+    $("#lettering").ready(function()
+    {
+      $("#lettering").lettering().animateLetters({opacity:0},null,{randomOrder:false,time:2000,reset:true});
+      $("#lettering").find(".outro").fadeOut(0);
+      $("#lettering").find(".intro").fadeIn(0);
+    });
+  });
+  </script>
   <script type="text/javascript">
     if(document.URL.match("#fukuoka")) {
       ChangeTab('fukuoka');

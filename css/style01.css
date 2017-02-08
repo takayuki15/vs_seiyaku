@@ -19,3 +19,41 @@
     text-align: center;
     margin-bottom: 20px;
 }
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999999;
+  background: url(../images/common/head_l.png) no-repeat fixed;
+  background-position: 50% 45%;
+}
+.pace-inactive {
+  display: none;
+}
+.pace .pace-progress {
+  background: #969696;
+  position: fixed;
+  z-index: 2000;
+  top: 50%;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+body > :not(.pace),body:before,body:after,body > :not(#loading){
+  -webkit-transition:opacity .4s ease-in-out;
+  -moz-transition:opacity .4s ease-in-out;
+  -o-transition:opacity .4s ease-in-out;
+  -ms-transition:opacity .4s ease-in-out;
+  transition:opacity .4s ease-in-out
+}
+
+body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-done):after, #loading {
+  opacity:0
+}
